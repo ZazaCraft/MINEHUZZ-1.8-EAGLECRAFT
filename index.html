@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Minecraft Site</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1e1e1e;
+      color: #fff;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #333;
+      padding: 20px;
+    }
+    h1 {
+      margin: 0;
+    }
+    .btn {
+      display: inline-block;
+      margin: 20px;
+      padding: 15px 30px;
+      background: #4CAF50;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #45a049;
+    }
+    #game-container {
+      margin: 20px auto;
+      width: 90%;
+      max-width: 1200px;
+      height: 700px;
+      display: none; /* hidden until button is clicked */
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+  <script>
+    function launchGame() {
+      document.getElementById('game-container').style.display = 'block';
+      document.getElementById('game-frame').src = 'eaglecraft/index.html';
+      window.scrollTo(0, document.getElementById('game-container').offsetTop);
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Minecraft Site</h1>
+  </header>
+
+  <main>
+    <p>Click below to play Minecraft 1.8 (Eaglercraft) right in your browser.</p>
+    <button class="btn" onclick="launchGame()">Play 1.8 Version</button>
+
+    <div id="game-container">
+      <iframe id="game-frame"></iframe>
+    </div>
+  </main>
+</body>
+</html>
+
