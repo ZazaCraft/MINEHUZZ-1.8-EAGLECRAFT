@@ -1,7 +1,30 @@
-</index.html          <-- your main site
-/style.css           <-- optional styling
-/eaglecraft/         <-- Eaglercraft 1.8 files
-    index.html       <-- entry point for Eaglercraft
-/minehuzz/           <-- Minehuzz files
-    index.html       <-- entry point for Minehuzz
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Minecraft Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function launchGame(path) {
+      document.getElementById('game-container').style.display = 'block';
+      document.getElementById('game-frame').src = path;
+      window.scrollTo(0, document.getElementById('game-container').offsetTop);
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Minecraft Hub</h1>
+  </header>
 
+  <main>
+    <p>Select a version to play:</p>
+    <button class="btn" onclick="launchGame('eaglecraft/index.html')">Play Minecraft 1.8 (Eaglercraft)</button>
+    <button class="btn" onclick="launchGame('minehuzz/index.html')">Play Minehuzz</button>
+
+    <div id="game-container">
+      <iframe id="game-frame"></iframe>
+    </div>
+  </main>
+</body>
+</html>
